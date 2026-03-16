@@ -131,7 +131,8 @@ body {
 /* Отключаем fixed background для iOS и Android, так как он вызывает "разваливание" верстки */
 @media (max-width: 1024px) {
   .screen1 {
-    background-attachment: scroll;
+    background-attachment: scroll !important;
+    background-position: center !important;
   }
 }
 
@@ -189,6 +190,7 @@ body {
 
 .content {
   text-align: center;
+  width: 100%;
   max-width: 900px;
   z-index: 2;
   position: relative;
@@ -309,7 +311,7 @@ body {
 
 h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 5.5rem;
+  font-size: clamp(2.5rem, 8vw, 5.5rem);
   margin: 0 0 0.5rem;
   color: transparent;
   background: linear-gradient(90deg, #d4af37, #f0d88a, #d4af37);
@@ -321,12 +323,12 @@ h1 {
 }
 
 .gallery-title {
-  font-size: 4.5rem;
+  font-size: clamp(2rem, 6vw, 4.5rem);
   margin-bottom: 1.5rem;
 }
 
 .invite-text {
-  font-size: 2rem;
+  font-size: clamp(1.2rem, 3vw, 2rem);
   color: #e8d9a0;
   margin: 0.5rem 0 1.5rem;
   line-height: 1.4;
@@ -334,7 +336,7 @@ h1 {
 }
 
 .about {
-  font-size: 2rem;
+  font-size: clamp(1.1rem, 2.5vw, 2rem);
   color: #e0d0a0;
   margin: 1rem 0 3rem;
   font-style: italic;
@@ -342,7 +344,7 @@ h1 {
 }
 
 .when-where {
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 2vw, 1.5rem);
   line-height: 1.8;
   color: #d0c090;
   margin: 1rem 0;

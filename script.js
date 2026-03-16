@@ -242,6 +242,9 @@ function initializeScrollAnimations() {
  * Parallax effect on scroll
  */
 function initializeParallax() {
+    // Параллакс только для десктопов (больше 1024px)
+    if (window.innerWidth <= 1024) return;
+
     window.addEventListener('scroll', function() {
         const scrolled = window.pageYOffset;
         const screen1 = document.querySelector('.screen1');
