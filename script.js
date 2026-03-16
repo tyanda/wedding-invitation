@@ -23,7 +23,6 @@ const eventConfig = {
 document.addEventListener('DOMContentLoaded', function() {
     initializeEventDetails();
     initializeScrollAnimations();
-    initializeParallax();
     startCountdown();
     initializeRSVP();
     initializeNavbar();
@@ -235,32 +234,6 @@ function initializeScrollAnimations() {
     // Observe gift items
     document.querySelectorAll('.gift-item').forEach(item => {
         observer.observe(item);
-    });
-}
-
-/**
- * Parallax effect on scroll
- */
-function initializeParallax() {
-    // Параллакс только для десктопов (больше 1024px)
-    if (window.innerWidth <= 1024) return;
-
-    const screen1 = document.querySelector('.screen1');
-    if (!screen1) return;
-
-    let ticking = false;
-
-    window.addEventListener('scroll', function() {
-        if (!ticking) {
-            window.requestAnimationFrame(function() {
-                const scrolled = window.pageYOffset;
-                // Используем calc(50% + offset), чтобы сохранить центрирование фона
-                // и сделать движение плавным без рывков
-                screen1.style.backgroundPositionY = `calc(50% + ${scrolled * 0.3}px)`;
-                ticking = false;
-            });
-            ticking = true;
-        }
     });
 }
 

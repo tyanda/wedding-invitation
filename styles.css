@@ -115,6 +115,7 @@ body {
   align-items: center;
   padding: 2rem 1rem;
   position: relative;
+  overflow: hidden;
 }
 
 /* Screen 1 — Photo background */
@@ -140,7 +141,6 @@ body {
   inset: 0;
   background: radial-gradient(circle at center, rgba(40,30,0,0.25), transparent 60%);
   pointer-events: none;
-  animation: float 8s ease-in-out infinite;
 }
 
 /* Screen 2 — Gallery */
