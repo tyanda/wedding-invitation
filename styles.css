@@ -17,6 +17,7 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  touch-action: manipulation;
 }
 
 body {
@@ -26,6 +27,8 @@ body {
   background: #0a0a0a;
   color: #f5e8c7;
   overflow-x: hidden;
+  touch-action: pan-x pan-y;
+  overscroll-behavior: none;
 }
 
 /* ========================================
