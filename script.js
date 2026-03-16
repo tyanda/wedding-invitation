@@ -312,12 +312,19 @@ function initializeRSVP() {
         btnYes.addEventListener('click', function() {
             // Показываем модальное окно
             showModal(modal, modalMessage, 'Ура! Жду тебя с нетерпением!<br>Это будет незабываемый вечер!', true);
-            
-            // Мгновенно перенаправляем в Telegram (без setTimeout, чтобы iOS не блокировала)
-            // window.location.href надежнее для deep-links на мобильных устройствах
+
+            // Открываем Telegram с задержкой для iOS
             setTimeout(() => {
-                window.location.href = `https://t.me/${eventConfig.telegram}`;
-            }, 100); // Крошечная задержка в 100мс допустима и позволяет модалке начать отрисовку
+                const telegramUrl = `https://t.me/${eventConfig.telegram}`;
+                
+                // Пробуем открыть в новом окне
+                const newWindow = window.open(telegramUrl, '_blank');
+                
+                // Если браузер заблокировал popup (iOS Safari), перенаправляем в текущем окне
+                if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
+                    window.location.href = telegramUrl;
+                }
+            }, 1500);
         });
     }
 
