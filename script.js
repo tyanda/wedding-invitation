@@ -337,12 +337,14 @@ function initializeRSVP() {
 
     if (btnYes) {
         btnYes.addEventListener('click', function() {
+            // Показываем модальное окно
             showModal(modal, modalMessage, 'Ура! Жду тебя с нетерпением!<br>Это будет незабываемый вечер!', true);
             
-            // Открываем Telegram через 1.5 секунды
+            // Мгновенно перенаправляем в Telegram (без setTimeout, чтобы iOS не блокировала)
+            // window.location.href надежнее для deep-links на мобильных устройствах
             setTimeout(() => {
-                window.open(`https://t.me/${eventConfig.telegram}`, '_blank');
-            }, 1500);
+                window.location.href = `https://t.me/${eventConfig.telegram}`;
+            }, 100); // Крошечная задержка в 100мс допустима и позволяет модалке начать отрисовку
         });
     }
 
@@ -407,7 +409,7 @@ function sendRSVPWhatsApp(response) {
         ? 'Привет! Я подтверждая, что приду на день рождения! 🎉' 
         : 'Привет! К сожалению, не смогу прийти 😔';
     
-    const url = `https://wa.me/${eventConfig.whatsappNumber}?text=${encodeURIComponent(message)}`;
+    const url = `https://wa.me/${eventConfig.whatsapp || ''}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
 }
 
@@ -419,7 +421,7 @@ function sendRSVPTelegram(response) {
         ? 'Привет! Я подтверждая, что приду на день рождения! 🎉'
         : 'Привет! К сожалению, не смогу прийти 😔';
     
-    const url = `https://t.me/${eventConfig.telegramUsername}`;
+    const url = `https://t.me/${eventConfig.telegram}`;
     window.open(url, '_blank');
 }
 
