@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shimmer's Birthday • Приглашение</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- OpenGraph / Social Media -->
+  <meta property="og:title" content="Shimmer's Birthday • Приглашение">
+  <meta property="og:description" content="Приглашаю тебя отметить мой день рождения! 25 августа, г. Якутск.">
+  <meta property="og:image" content="main-photo.jpg">
+  <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Индикатор прогресса скролла -->
+<div class="scroll-progress" id="scroll-progress"></div>
+
+<!-- Кнопка наверх -->
+<button class="scroll-to-top" id="scroll-to-top" aria-label="Наверх">
+  <span>↑</span>
+</button>
+
+<!-- Навигационное меню -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="#screen1" class="nav-logo">Tyanda</a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Меню">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="nav-menu" id="nav-menu">
+      <li><a href="#screen1" class="nav-link">Главная</a></li>
+      <li><a href="#screen2" class="nav-link">Галерея</a></li>
+      <li><a href="#screen3" class="nav-link">RSVP</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Декоративные частицы -->
+<div class="particles">
+  <span class="particle"></span>
+  <span class="particle"></span>
+  <span class="particle"></span>
+  <span class="particle"></span>
+  <span class="particle"></span>
+  <span class="particle"></span>
+  <span class="particle"></span>
+  <span class="particle"></span>
+  <span class="particle"></span>
+  <span class="particle"></span>
+  <span class="particle"></span>
+  <span class="particle"></span>
+</div>
+
+<!-- Первый экран: фото-фон + приглашение -->
+<section class="screen screen1" id="screen1">
+  <div class="content">
+    <!-- Таймер обратного отсчёта -->
+    <div class="countdown" id="countdown">
+      <div class="countdown-item">
+        <span class="countdown-value" id="days">00</span>
+        <span class="countdown-label">дней</span>
+      </div>
+      <div class="countdown-divider">:</div>
+      <div class="countdown-item">
+        <span class="countdown-value" id="hours">00</span>
+        <span class="countdown-label">часов</span>
+      </div>
+      <div class="countdown-divider">:</div>
+      <div class="countdown-item">
+        <span class="countdown-value" id="minutes">00</span>
+        <span class="countdown-label">минут</span>
+      </div>
+      <div class="countdown-divider">:</div>
+      <div class="countdown-item">
+        <span class="countdown-value" id="seconds">00</span>
+        <span class="countdown-label">секунд</span>
+      </div>
+    </div>
+
+    <h1>Tyanda</h1>
+    <div class="invite-text">
+      приглашает тебя отметить день рождения
+    </div>
+
+    <div class="when-where">
+      <span class="highlight" id="event-date">25 августа 2026</span> • <span id="event-day">вторник</span><br>
+      начало в <span class="highlight" id="event-time">19:00</span><br><br>
+      
+      <div class="calendar-wrapper">
+        <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Tyanda's+Birthday+Party+✨&dates=20260825T100000Z/20260825T170000Z&details=Шампанское,+тёплая+компания+и+золотые+воспоминания+✨&location=Якутск,+ул.+Ярославского+39/1&sf=true&output=xml" target="_blank" class="calendar-btn">
+          Добавить в календарь
+        </a>
+      </div>
+
+      <a href="https://2gis.ru/yakutsk/search/%D0%AF%D0%BA%D1%83%D1%82%D1%81%D0%BA%20%D0%AF%D1%80%D0%BE%D1%81%D0%BB%D0%B0%D0%B2%D1%81%D0%BA%D0%BE%D0%B3%D0%BE%2039%2F1/geo/7037510072927655/129.728624%2C62.02304?m=129.72859%2C62.023227%2F16.94" target="_blank" rel="noopener" class="map-link">
+        <span class="highlight" id="event-location">г.Якутск</span> • <span id="event-address">ул. Ярославского 39/1</span>
+        <span class="map-icon">📍</span>
+      </a>
+    </div>
+
+    <div class="rsvp">
+      Шампанское, тёплая компания и золотые воспоминания ✨
+    </div>
+  </div>
+</section>
+
+<!-- Музыкальный фон -->
+<audio id="bg-music" loop src="477082402_1_tiktok_69b1b680250687_36833488.mp3"></audio>
+<button id="music-toggle" class="music-btn" aria-label="Включить/выключить музыку">
+  <span class="music-icon" id="music-icon">▶</span>
+</button>
+
+<!-- Второй экран: галерея -->
+<section class="screen screen2" id="screen2">
+  <div class="content">
+    <h1 class="gallery-title">Виртуальные миры</h1>
+    
+    <div class="about">
+      Здесь собраны работы, созданные искусственным интеллектом —<br>
+      от фантастических пейзажей до цифровых портретов.<br>
+      Приходи — покажу, как технологии создают искусство ✨
+    </div>
+
+    <div class="gallery">
+      <img src="images/photo_1_2026-03-16_15-45-56.jpg" alt="ИИ арт 1">
+      <img src="images/photo_2_2026-03-16_15-45-56.jpg" alt="ИИ арт 2">
+      <img src="images/photo_3_2026-03-16_15-45-57.jpg" alt="ИИ арт 3">
+      <img src="images/photo_5_2026-03-16_15-45-57.jpg" alt="ИИ арт 4">
+      <img src="images/photo_7_2026-03-16_15-45-57.jpg" alt="ИИ арт 5">
+      <img src="images/photo_2_2026-03-16_14-39-20.jpg" alt="ИИ арт 6">
+      <img src="images/Без имени-2.jpg" alt="ИИ арт 7">
+      <img src="images/ChatGPT Image 22 дек. 2025 г., 00_50_37.png" alt="ИИ арт 8">
+      <img src="images/ChatGPT Image 28 дек. 2025 г., 21_38_49.png" alt="ИИ арт 9">
+      <img src="images/f11230b285b05c73ba672227201b77a8_1763913389.png" alt="ИИ арт 10">
+      <img src="images/Gemini_Generated_Image_b4m5wab4m5wab4m5.png" alt="ИИ арт 11">
+      <img src="images/Gemini_Generated_Image_gsgh74gsgh74gsgh (1).png" alt="ИИ арт 12">
+    </div>
+
+    <div class="rsvp rsvp-bottom">
+      Жду тебя — чтобы добавить новые фото в эту историю ✨
+    </div>
+  </div>
+</section>
+
+<!-- Третий экран: RSVP + подарки -->
+<section class="screen screen3" id="screen3">
+  <div class="content">
+    <h1 class="rsvp-title">Подтверди присутствие</h1>
+    
+    <div class="rsvp-card">
+      <p class="rsvp-question">Ты придешь на праздник?</p>
+      
+      <div class="rsvp-buttons">
+        <button class="btn-rsvp btn-yes" id="btn-yes">
+          <span>Я приду!</span>
+        </button>
+        <button class="btn-rsvp btn-no" id="btn-no">
+          <span>К сожалению, не смогу</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="gift-section">
+      <h2 class="gift-title">Что я хочу на подарок</h2>
+      
+      <div class="gift-card">
+        <div class="gift-list">
+          <a href="https://www.dns-shop.ru/product/38771e83fa5ed21a/136-noutbuk-apple-macbook-air-m4-serebristyj/" target="_blank" rel="noopener" class="gift-item-link">
+            <div class="gift-item">
+              <div class="gift-image">
+                <img src="images/1.png" alt="MacBook">
+              </div>
+              <div class="gift-info">
+                <span class="gift-text">Apple MacBook</span>
+                <span class="gift-link-icon">🔗</span>
+              </div>
+            </div>
+          </a>
+          <a href="https://www.dns-shop.ru/product/b96612c2f97ad21a/11-planset-apple-ipad-11th-gen-wi-fi-128-gb-serebristyj/" target="_blank" rel="noopener" class="gift-item-link">
+            <div class="gift-item">
+              <div class="gift-image">
+                <img src="images/2.png" alt="iPad">
+              </div>
+              <div class="gift-info">
+                <span class="gift-text">Apple iPad</span>
+                <span class="gift-link-icon">🔗</span>
+              </div>
+            </div>
+          </a>
+          <a href="https://www.dns-shop.ru/product/00e7b4058dd4d0a4/63-smartfon-apple-iphone-17-pro-256-gb-serebristyj/" target="_blank" rel="noopener" class="gift-item-link">
+            <div class="gift-item">
+              <div class="gift-image">
+                <img src="images/3.png" alt="iPhone">
+              </div>
+              <div class="gift-info">
+                <span class="gift-text">Apple iPhone 17 Pro</span>
+                <span class="gift-link-icon">🔗</span>
+              </div>
+            </div>
+          </a>
+          <a href="https://www.dns-shop.ru/product/ce47107f31f2d0a4/remesok-apple-dla-apple-watch-44-45-46-49mm-cernyj/" target="_blank" rel="noopener" class="gift-item-link">
+            <div class="gift-item">
+              <div class="gift-image">
+                <img src="images/4.png" alt="Apple Watch">
+              </div>
+              <div class="gift-info">
+                <span class="gift-text">Apple Watch 49mm</span>
+                <span class="gift-link-icon">🔗</span>
+              </div>
+            </div>
+          </a>
+          <a href="https://www.dns-shop.ru/product/131b17686f3bd21a/besprovodnye-nausniki-apple-airpods-max-cernyj-2024/" target="_blank" rel="noopener" class="gift-item-link">
+            <div class="gift-item">
+              <div class="gift-image">
+                <img src="images/5.png" alt="AirPods Max">
+              </div>
+              <div class="gift-info">
+                <span class="gift-text">Apple AirPods Max</span>
+                <span class="gift-link-icon">🔗</span>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <p class="gift-note">
+          Но главное — твоё присутствие!<br>
+          Остальное не так важно.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Модальное окно -->
+<div class="modal-overlay" id="modal" style="display: none;" role="dialog" aria-modal="true">
+  <div class="modal-content">
+    <p class="modal-message" id="modal-message">Спасибо за ответ!</p>
+    <button class="modal-btn" id="modal-close">Отлично!</button>
+  </div>
+</div>
+
+<!-- Модальное окно Lightbox -->
+<div class="lightbox-overlay" id="lightbox" style="display: none;" role="dialog" aria-modal="true">
+  <span class="lightbox-close" id="lightbox-close">&times;</span>
+  <img class="lightbox-image" id="lightbox-img" src="" alt="Увеличенное фото">
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

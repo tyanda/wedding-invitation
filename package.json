@@ -1,0 +1,18 @@
+{
+  "name": "birthday-invite",
+  "version": "1.0.0",
+  "description": "**Dark Luxury Edition** — чёрный классический стиль с золотым акцентом.",
+  "main": "script.js",
+  "scripts": {
+    "start": "live-server --port=8080",
+    "dev": "live-server --port=8080 --no-browser",
+    "build": "echo 'Build complete!'"
+  },
+  "keywords": ["birthday", "invitation", "html", "css"],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}

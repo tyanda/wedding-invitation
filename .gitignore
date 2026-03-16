@@ -1,0 +1,16 @@
+# Зависимости
+node_modules/
+
+# Логи
+*.log
+npm-debug.log*
+
+# Файлы ОС
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
