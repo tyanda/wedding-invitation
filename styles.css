@@ -120,11 +120,19 @@ body {
 /* Screen 1 — Photo background */
 .screen1 {
   background: linear-gradient(rgba(10,10,10,0.55), rgba(10,10,10,0.75)),
-              url('main-photo.jpg') center/cover no-repeat fixed;
+              url('main-photo.jpg') center/cover no-repeat;
+  background-attachment: fixed; /* Работает на десктопах */
   justify-content: center;
   padding: 2rem 1rem;
   min-height: 100vh;
   perspective: 1000px;
+}
+
+/* Отключаем fixed background для iOS и Android, так как он вызывает "разваливание" верстки */
+@media (max-width: 1024px) {
+  .screen1 {
+    background-attachment: scroll;
+  }
 }
 
 .screen1::before {

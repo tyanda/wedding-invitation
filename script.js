@@ -320,12 +320,11 @@ function initializeRSVP() {
     const btnNo = document.getElementById('btn-no');
     const modal = document.getElementById('modal');
     const modalClose = document.getElementById('modal-close');
-    const modalEmoji = document.getElementById('modal-emoji');
     const modalMessage = document.getElementById('modal-message');
 
     if (btnYes) {
         btnYes.addEventListener('click', function() {
-            showModal(modal, modalEmoji, modalMessage, '🎉', 'Ура! Жду тебя с нетерпением!<br>Это будет незабываемый вечер!', true);
+            showModal(modal, modalMessage, 'Ура! Жду тебя с нетерпением!<br>Это будет незабываемый вечер!', true);
             
             // Открываем Telegram через 1.5 секунды
             setTimeout(() => {
@@ -336,7 +335,7 @@ function initializeRSVP() {
 
     if (btnNo) {
         btnNo.addEventListener('click', function() {
-            showModal(modal, modalEmoji, modalMessage, '😊', 'Жаль, но я понимаю!<br>Может быть в следующий раз!', false);
+            showModal(modal, modalMessage, 'Жаль, но я понимаю!<br>Может быть в следующий раз!', false);
         });
     }
 
@@ -366,10 +365,9 @@ function initializeRSVP() {
 /**
  * Show modal
  */
-function showModal(modal, emojiEl, messageEl, emoji, message, triggerConfetti) {
+function showModal(modal, messageEl, message, triggerConfetti) {
     if (!modal) return;
     
-    emojiEl.textContent = emoji;
     messageEl.innerHTML = message;
     
     modal.style.display = 'flex';
