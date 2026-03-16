@@ -125,15 +125,18 @@ body {
 .screen1 {
   background: linear-gradient(rgba(10,10,10,0.55), rgba(10,10,10,0.75)),
               url('main-photo.jpg') center/cover no-repeat;
+  background-attachment: fixed;
   justify-content: center;
   padding: 2rem 1rem;
   min-height: 100vh;
   perspective: 1000px;
+  animation: bgSlowZoom 20s ease-in-out infinite alternate;
 }
 
 /* Отключаем параллакс для iOS и Android, так как он вызывает "разваливание" верстки */
 @media (max-width: 1024px) {
   .screen1 {
+    background-attachment: scroll !important;
     background-position: center !important;
   }
 }
@@ -144,6 +147,16 @@ body {
   inset: 0;
   background: radial-gradient(circle at center, rgba(40,30,0,0.25), transparent 60%);
   pointer-events: none;
+  animation: float 8s ease-in-out infinite;
+}
+
+@keyframes bgSlowZoom {
+  from {
+    background-size: cover;
+  }
+  to {
+    background-size: 110% cover;
+  }
 }
 
 /* Screen 2 — Gallery */
