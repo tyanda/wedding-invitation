@@ -31,7 +31,43 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeLazyLoading();
     initializeMusic();
     initializeLightbox();
+    disableZoom();
 });
+
+/**
+ * Disable zoom on mobile devices
+ */
+function disableZoom() {
+    // Блокировка жестов масштабирования
+    document.addEventListener('touchmove', function(e) {
+        if (e.scale !== 1) {
+            e.preventDefault();
+        }
+    }, { passive: false });
+
+    // Блокировка pinch-to-zoom
+    document.addEventListener('gesturestart', function(e) {
+        e.preventDefault();
+    });
+
+    document.addEventListener('gesturechange', function(e) {
+        e.preventDefault();
+    });
+
+    document.addEventListener('gestureend', function(e) {
+        e.preventDefault();
+    });
+
+    // Блокировка двойного тапа для масштабирования
+    let lastTouchEnd = 0;
+    document.addEventListener('touchend', function(e) {
+        const now = Date.now();
+        if (now - lastTouchEnd <= 300) {
+            e.preventDefault();
+        }
+        lastTouchEnd = now;
+    }, false);
+}
 
 /**
  * Music Player Functionality
